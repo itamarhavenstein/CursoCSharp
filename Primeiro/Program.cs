@@ -10,11 +10,33 @@ namespace Primeiro
     {
       //VerificaHora();
       //Calculo do triangulo
-      CalculoTriangulo();
+      //CalculoTriangulo();
       //mostrando informação da pessoal
       //MostraPessoa();
       //mostrando os funcionarios
       //MostraFuncionario();
+      // EstoqueProdutos();
+      CalculoRetangulo();
+
+    }
+
+    private static void CalculoRetangulo()
+    {
+      var ret = new Retangulo();
+
+      Console.WriteLine(" Entre a largura e altura do retângulo: ");
+      Console.Write("Largura: ");
+      ret.Largura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      Console.Write("Altura: ");
+      ret.Altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+      Console.WriteLine(" Area = " + ret.Area().ToString("F2"));
+      Console.WriteLine(" Perímetro = " + ret.Perimetro().ToString("F2"));
+      Console.WriteLine(" Diagonal = " + ret.Diagonal().ToString("F2"));
+    }
+
+    private static void EstoqueProdutos()
+    {
       var p = new Produto();
 
       Console.WriteLine("Entre os dados do produto:");
@@ -34,7 +56,7 @@ namespace Primeiro
       Console.WriteLine();
       p.AdicionarProdutos(qte);
 
-      
+
       Console.WriteLine();
       Console.WriteLine("Dados do produto: " + p);
 
