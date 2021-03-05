@@ -16,8 +16,13 @@ namespace Primeiro
       //mostrando os funcionarios
       //MostraFuncionario();
       // EstoqueProdutos();
-      CalculoRetangulo();
+      //CalculoRetangulo();
+      NotasAluno();
+    }
 
+    private static void NotasAluno()
+    {
+      
     }
 
     private static void CalculoRetangulo()
@@ -33,6 +38,8 @@ namespace Primeiro
       Console.WriteLine(" Area = " + ret.Area().ToString("F2"));
       Console.WriteLine(" Perímetro = " + ret.Perimetro().ToString("F2"));
       Console.WriteLine(" Diagonal = " + ret.Diagonal().ToString("F2"));
+
+      Console.ReadKey();
     }
 
     private static void EstoqueProdutos()
@@ -70,23 +77,22 @@ namespace Primeiro
     private static void MostraFuncionario()
     {
       var funcionario = new Funcionario();
-      var funcionario1 = new Funcionario();
 
       Console.WriteLine("Dados do Primeiro Funcionário: ");
       Console.Write("Nome: ");
       funcionario.Nome = Console.ReadLine();
-      Console.Write("Salário: ");
-      funcionario.Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      Console.Write("Salário bruto: ");
+      funcionario.SalarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      Console.Write("Imposto: ");
+      funcionario.Imposto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-      Console.WriteLine("Dados do Segundo Funcionário: ");
-      Console.Write("Nome: ");
-      funcionario1.Nome = Console.ReadLine();
-      Console.Write("Salário: ");
-      funcionario1.Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      Console.WriteLine("Funcionário: "+ funcionario.ToString());
 
-      var soma = funcionario.Salario + funcionario1.Salario;
-      var media = soma / 2;
-      Console.WriteLine("Salário médio = " + media.ToString("F2", CultureInfo.InvariantCulture));
+      Console.Write("Digite a porcentagem para aumentar o salário: ");
+      var aumento = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      funcionario.AumentarSalario(aumento);
+
+      Console.WriteLine("Dados atualizados: "+ funcionario.ToString());
     }
 
     private static void MostraPessoa()
