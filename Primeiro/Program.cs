@@ -22,7 +22,17 @@ namespace Primeiro
 
     private static void NotasAluno()
     {
-      
+      var aluno = new Aluno();
+      Console.WriteLine("Nome do aluno: ");
+      aluno.Nome = Console.ReadLine();
+      Console.WriteLine("Digite as três notas do aluno: ");
+      for (var i = 1; i <= 3; i++)
+      {
+        aluno.Notas.Add(double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
+      }
+
+      Console.WriteLine("Nota Final = " + aluno.NotaFinal().ToString("F2", CultureInfo.InvariantCulture));
+      Console.WriteLine(aluno.VerificarNota());
     }
 
     private static void CalculoRetangulo()
@@ -86,13 +96,13 @@ namespace Primeiro
       Console.Write("Imposto: ");
       funcionario.Imposto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-      Console.WriteLine("Funcionário: "+ funcionario.ToString());
+      Console.WriteLine("Funcionário: " + funcionario.ToString());
 
       Console.Write("Digite a porcentagem para aumentar o salário: ");
       var aumento = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
       funcionario.AumentarSalario(aumento);
 
-      Console.WriteLine("Dados atualizados: "+ funcionario.ToString());
+      Console.WriteLine("Dados atualizados: " + funcionario.ToString());
     }
 
     private static void MostraPessoa()
