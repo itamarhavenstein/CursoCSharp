@@ -15,9 +15,35 @@ namespace Primeiro
       //MostraPessoa();
       //mostrando os funcionarios
       //MostraFuncionario();
-      // EstoqueProdutos();
+      EstoqueProdutos();
       //CalculoRetangulo();
-      NotasAluno();
+      //NotasAluno();
+      //CalculandoCircunferencia();
+      //ConverteMoeda();
+    }
+
+    private static void ConverteMoeda()
+    {
+      Console.Write("Qual é a cotação do dólar? ");
+      var dolar = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      Console.Write("Quantos dólares você vai comprar? ");
+      var qtd = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      var valor = ConversorDeMoeda.ConverteMoeda(dolar, qtd);
+      Console.WriteLine("Valor a ser pago em reais = "+ valor.ToString("F2", CultureInfo.InvariantCulture));
+    }
+
+    private static void CalculandoCircunferencia()
+    {
+      Console.WriteLine("Entre com o valor do raio: ");
+      double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+      double circ = Calculadora.Circunferencia(raio);
+      double volume = Calculadora.Volume(raio);
+
+      Console.WriteLine(" Circunferencia: " + circ.ToString("F2", CultureInfo.InvariantCulture));
+      Console.WriteLine(" Volume: " + volume.ToString("F2", CultureInfo.InvariantCulture));
+      Console.WriteLine(" Valor de PI: " + Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture));
+
     }
 
     private static void NotasAluno()
@@ -54,15 +80,15 @@ namespace Primeiro
 
     private static void EstoqueProdutos()
     {
-      var p = new Produto();
-
       Console.WriteLine("Entre os dados do produto:");
       Console.Write("Nome: ");
-      p.Nome = Console.ReadLine();
+      var nome = Console.ReadLine();
       Console.Write("Preço: ");
-      p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      var preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
       Console.WriteLine("Quantidade no estoque: ");
-      p.Quantidade = int.Parse(Console.ReadLine());
+      var qtd = int.Parse(Console.ReadLine());
+      
+      var p = new Produto(nome, preco, qtd);
 
       Console.WriteLine();
       Console.WriteLine("Dados do produto: " + p);
