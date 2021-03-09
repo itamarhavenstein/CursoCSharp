@@ -5,15 +5,28 @@ namespace Primeiro.Models
 {
   class Produto
   {
-    public string Nome { get; set; }
-    public double Preco { get; set; }
-    public int Quantidade { get; set; }
+    private string _nome { get; set; }
+    public double Preco { get; private set; }
+    public int Quantidade { get; private set; }
 
-    public Produto(string nome, double preco, int quantidade) 
+    public Produto() { }
+    public Produto(string nome, double preco, int quantidade)
     {
-        Nome = nome;
-        Preco = preco;
-        Quantidade = quantidade;
+      _nome = nome;
+      Preco = preco;
+      Quantidade = quantidade;
+    }
+
+    public string Nome
+    {
+      get { return _nome; }
+      set
+      {
+        if (value != null && value.Length > 1)
+        {
+          _nome = value;
+        }
+      }
     }
 
     public double ValorTotalEmEstoque()
@@ -33,7 +46,7 @@ namespace Primeiro.Models
 
     public override string ToString()
     {
-      return Nome
+      return _nome
             + ", $ "
             + Preco.ToString("F2", CultureInfo.InvariantCulture)
             + ", "

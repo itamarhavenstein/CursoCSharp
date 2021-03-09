@@ -15,11 +15,19 @@ namespace Primeiro
       //MostraPessoa();
       //mostrando os funcionarios
       //MostraFuncionario();
-      EstoqueProdutos();
+      // EstoqueProdutos();
       //CalculoRetangulo();
       //NotasAluno();
       //CalculandoCircunferencia();
       //ConverteMoeda();
+      EstoqueProdutosEncapsulamento();
+    }
+
+    private static void EstoqueProdutosEncapsulamento()
+    {
+      var p = new Produto("TV", 500.00, 10);
+
+      
     }
 
     private static void ConverteMoeda()
@@ -29,7 +37,7 @@ namespace Primeiro
       Console.Write("Quantos dólares você vai comprar? ");
       var qtd = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
       var valor = ConversorDeMoeda.ConverteMoeda(dolar, qtd);
-      Console.WriteLine("Valor a ser pago em reais = "+ valor.ToString("F2", CultureInfo.InvariantCulture));
+      Console.WriteLine("Valor a ser pago em reais = " + valor.ToString("F2", CultureInfo.InvariantCulture));
     }
 
     private static void CalculandoCircunferencia()
@@ -87,7 +95,7 @@ namespace Primeiro
       var preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
       Console.WriteLine("Quantidade no estoque: ");
       var qtd = int.Parse(Console.ReadLine());
-      
+
       var p = new Produto(nome, preco, qtd);
 
       Console.WriteLine();
