@@ -20,14 +20,14 @@ namespace Primeiro
       //NotasAluno();
       //CalculandoCircunferencia();
       //ConverteMoeda();
-      EstoqueProdutosEncapsulamento();
+      //EstoqueProdutosEncapsulamento();
+      //fazer transferencias de bancos
+      
     }
 
     private static void EstoqueProdutosEncapsulamento()
     {
       var p = new Produto("TV", 500.00, 10);
-
-      
     }
 
     private static void ConverteMoeda()
