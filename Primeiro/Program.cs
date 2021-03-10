@@ -22,7 +22,40 @@ namespace Primeiro
       //ConverteMoeda();
       //EstoqueProdutosEncapsulamento();
       //fazer transferencias de bancos
-      
+      MovimentacoesBancarias();
+    }
+
+    private static void MovimentacoesBancarias()
+    {
+      Console.Write("Entre o número da conta: ");
+      var numeroConta = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      Console.Write("Entre o titular da conta: ");
+      var nome = Console.ReadLine();
+      Console.Write("Haverá depósito inicial (s/n)? ");
+      var deposita = Console.ReadLine();
+
+      var saldo = 0d;
+      if (deposita == "s")
+      {
+        Console.Write("Entre o valor de depósito inicial: ");
+        saldo = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      }
+
+      var conta1 = new ContaBancaria(numeroConta, nome, saldo);
+
+      Console.WriteLine("Dados da conta: \r\n" + conta1.ToString());
+
+      Console.Write("Entre um valor para depósito: ");
+      var deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      conta1.Deposito(deposito);
+
+      Console.WriteLine("Dados da conta atualizados: \r\n" + conta1.ToString());
+
+      Console.Write("Entre um valor para saque: ");
+      var saque = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+      conta1.Saque(saque);
+
+      Console.WriteLine("Dados da conta atualizados: \r\n" + conta1.ToString());
     }
 
     private static void EstoqueProdutosEncapsulamento()
