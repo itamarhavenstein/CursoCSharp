@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Primeiro.Models;
 
@@ -23,10 +24,44 @@ namespace Primeiro
             //EstoqueProdutosEncapsulamento();
             //fazer transferencias de bancos
             //MovimentacoesBancarias();
-            AlugandoQuartos();
+            //AlugandoQuartos();
+            //UsandoListas();
+            AumetoDeSalario();
         }
 
-        private static void AlugandoQuartos()
+    private static void AumetoDeSalario()
+    {
+      throw new NotImplementedException();
+    }
+
+    private static void UsandoListas()
+    {
+      
+      List<string> list = new List<string>();
+      list.Add("Maria");
+      list.Add("Alex");
+      list.Add("Bob");
+      list.Add("Itamar");
+      list.Insert(2,"Sandra");
+
+      foreach (var item in list)
+      {
+        Console.WriteLine(item);
+      }
+      Console.WriteLine("List count: "+ list.Count);
+
+      string s1 = list.Find(x => x[0] == 'A');
+      Console.Write("First 'A': "+ s1);
+
+      var s2 = list.FindLast(x => x[0] =='B');
+      Console.WriteLine("Last 'B': "+ s2);
+
+      int pos1 = list.FindIndex(x => x[0] == 'A');
+      
+      
+    }
+
+    private static void AlugandoQuartos()
         {
             Pessoa[] quartos = new Pessoa[10];
 
