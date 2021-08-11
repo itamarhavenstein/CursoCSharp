@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Primeiro.Models;
 
 namespace Primeiro
@@ -26,12 +27,59 @@ namespace Primeiro
             //MovimentacoesBancarias();
             //AlugandoQuartos();
             //UsandoListas();
-            AumetoDeSalario();
+            AumentoDeSalario();
         }
 
-    private static void AumetoDeSalario()
+    private static void AumentoDeSalario()
     {
-      throw new NotImplementedException();
+       Console.WriteLine("Quantos de funcionários que seram cadastrados? ");
+       var qtd = int.Parse(Console.ReadLine());
+
+      var funcionarios = new List<Funcionario>();
+
+      for (var i = 1; i <= qtd; i++)
+      {
+        var funcionario = new Funcionario();
+        Console.WriteLine($"Funcionário " + i);
+
+        Console.WriteLine($"Código: ");
+        funcionario.Id = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine($"Name: ");
+        funcionario.Nome = Console.ReadLine();
+
+        Console.WriteLine($"Salário(ex: 100.00): ");
+        funcionario.SalarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        funcionarios.Add(funcionario);
+      }
+
+      Console.WriteLine($"Gostaria de dar aumento para algum funcionário?(S/N)");
+      var decisao = Console.ReadLine().ToUpper();
+
+      if(decisao.Equals("S")){
+        Console.WriteLine($"Entre com o código do funcionário: ");
+        var codigo = int.Parse(Console.ReadLine());
+
+        Funcionario escolhido = funcionarios.Select(x => x).Where(x => x.Id == codigo).FirstOrDefault();
+
+        if(escolhido != null){
+          Console.WriteLine($"Digite a porcentagem do aumento que queira dar para o funcionário: ");
+          var aumento = double.Parse(Console.ReadLine());
+          escolhido.AumentarSalario(aumento);
+        }else{
+          Console.WriteLine("Não existe esse funcionário cadastrado!!!");
+        }
+
+        Console.WriteLine($"Lista de funcionários: ");
+        
+       foreach (var item in funcionarios)
+       {
+           Console.WriteLine("{0}, {1}, {2}",item.Id, item.Nome, item.SalarioBruto.ToString("F2", CultureInfo.InvariantCulture));
+       } 
+       Console.WriteLine($"Fim!!!");
+       
+      }
     }
 
     private static void UsandoListas()

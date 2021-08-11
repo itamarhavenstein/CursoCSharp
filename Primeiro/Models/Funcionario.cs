@@ -8,6 +8,7 @@ namespace Primeiro.Models
     public string Nome { get; set; }
     public double SalarioBruto { get; set; }
     public double Imposto { get; set; }
+    public int Id { get; set; }
 
     public double SalarioLiquido(){
         return SalarioBruto - Imposto;
