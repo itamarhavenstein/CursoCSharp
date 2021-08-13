@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Data;
 using System.Linq;
 using Primeiro.Models;
 
@@ -39,7 +40,34 @@ namespace Primeiro
 
     private static void FuncoesDateTime()
     {
-      
+      //hora atual do sistema
+      DateTime d1 = DateTime.Now;
+      //sobrecarga que defino a data que quero
+      DateTime d2 = new DateTime(2021, 08, 13);
+      DateTime d3 = new DateTime(2021, 08, 13, 20, 45, 3);
+      DateTime d4 = new DateTime(2021, 08, 13, 20, 45, 3, 500);
+      DateTime d5 = DateTime.Today;
+      DateTime d6 = DateTime.UtcNow;
+      DateTime d7 = DateTime.Parse("2000-08-15");
+      DateTime d8 = DateTime.Parse("2000-08-15 13:55:02");
+      //verificar por que esses 2 exemplos a seguir não estão funcinando?
+      //DateTime d9 = DateTime.Parse("15/08/2000");
+      //DateTime d10 = DateTime.Parse("15/08/2000 15:55:51");
+      DateTime d11 = DateTime.ParseExact("2000-08-15", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+      //DateTime d12 = DateTime.ParseExact("15/8/2000 13:05:59", "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+
+
+      Console.WriteLine($"Data de hoje: " + d1);
+      Console.WriteLine($"Data que coloquei: " + d2);
+      Console.WriteLine($"Data e hora que coloquei: " + d3);
+      Console.WriteLine($"Data e hora com milessegundos: " + d4);
+      Console.WriteLine($"Data de hoje com o horario zero: " + d5);
+      Console.WriteLine($"Data utc: " + d6);
+      Console.WriteLine($"Parse: " + d7);
+      Console.WriteLine($"Parse hora: " + d8);
+      //Console.WriteLine($"Parse Brasil: " + d9);
+      //Console.WriteLine($"Parse Brasil hora: " + d10);
+      Console.WriteLine($"ParseExact: " + d11);
     }
 
     private static void FuncoesString()
