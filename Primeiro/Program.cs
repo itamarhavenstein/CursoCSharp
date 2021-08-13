@@ -30,7 +30,44 @@ namespace Primeiro
       //AumentoDeSalario();
       //Matrizes();
       //exercicio M linhas e N colunas
-      DesafioMatrizes();
+      //DesafioMatrizes();
+      //funções string 
+      //FuncoesString();
+      //funções datetime
+      FuncoesDateTime();
+    }
+
+    private static void FuncoesDateTime()
+    {
+      
+    }
+
+    private static void FuncoesString()
+    {
+      string original = "abdcf KJIHNN NBJJ asd DEFG    ";
+
+      string s1 = original.ToUpper();
+      string s2 = original.ToLower();
+      string s3 = original.Trim();
+      int n1 = original.IndexOf("bc");
+      int n2 = original.LastIndexOf("sd");
+      string s4 = original.Substring(3);
+      string s5 = original.Substring(3, 5);
+      string s6 = original.Replace('a', 'x');
+      bool b1 = String.IsNullOrEmpty(original);
+      bool b2 = String.IsNullOrWhiteSpace(original);
+
+      Console.WriteLine($"Original: -" + original + "-");
+      Console.WriteLine($"ToUpper: -" + s1 + "-");
+      Console.WriteLine($"ToLower: -" + s2 + "-");
+      Console.WriteLine($"Trim: -" + s3 + "-");
+      Console.WriteLine($"IndexOf: " + n1);
+      Console.WriteLine($"LastIndexOf: " + n2);
+      Console.WriteLine($"Substring: " + s4);
+      Console.WriteLine($"Substring " + s5);
+      Console.WriteLine($"Replace: " + s6);
+      Console.WriteLine($"IsNullOrEmpty: " + b1);
+      Console.WriteLine($"IsNullOrWhiteSpace: " + b2);
     }
 
     private static void DesafioMatrizes()
@@ -51,20 +88,24 @@ namespace Primeiro
         {
           if (mat[i, j] == escolha)
           {
-            Console.WriteLine("Position: {0},{1}:", i,j);
-            if(j != 0){
-              Console.WriteLine("Left: {0}", mat[i,(j-1)]);
+            Console.WriteLine("Position: {0},{1}:", i, j);
+            if (j != 0)
+            {
+              Console.WriteLine("Left: {0}", mat[i, (j - 1)]);
             }
-            if(j < (n - 1)){
-              Console.WriteLine("Right: {0}", mat[i,(j+1)]);
+            if (j < (n - 1))
+            {
+              Console.WriteLine("Right: {0}", mat[i, (j + 1)]);
             }
-            if(i != 0){
-              Console.WriteLine("Up: {0}", mat[(i-1),j]);
+            if (i != 0)
+            {
+              Console.WriteLine("Up: {0}", mat[(i - 1), j]);
             }
-            if(i < (m-1)){
-              Console.WriteLine("Down: {0}", mat[(i+1),j]);
+            if (i < (m - 1))
+            {
+              Console.WriteLine("Down: {0}", mat[(i + 1), j]);
             }
-                      
+
           }
         }
       }
