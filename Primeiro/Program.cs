@@ -22,7 +22,11 @@ namespace Primeiro
       var geometria = new Geometria();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
-      Console.WriteLine($"1 - VerificaHora \r\n2 - CalculoTriangulo");
+      Console.WriteLine($"1 - VerificaHora"+
+                     "\r\n2 - CalculoTriangulo"+
+                     "\r\n3 - PropriedadesDateTime"+
+                     "\r\n4 - PropriedadesTimeSpan"+
+                     "\r\n5 - DatetimeKindIso8601");
       int escolha = int.Parse(Console.ReadLine());
       
       switch (escolha)
@@ -32,6 +36,15 @@ namespace Primeiro
           break;
         case 2:
           geometria.CalculoTriangulo();
+          break;
+        case 3:
+          dataHora.PropriedadesDateTime();
+          break;
+        case 4:
+          dataHora.PropriedadesTimeSpan();
+          break;
+        case 5:
+          dataHora.DateTimeKindIso8601();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
