@@ -20,13 +20,15 @@ namespace Primeiro
     {
       var dataHora = new DataHora();
       var geometria = new Geometria();
+      var enumera = new Enumeradores();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora"+
                      "\r\n2 - CalculoTriangulo"+
                      "\r\n3 - PropriedadesDateTime"+
                      "\r\n4 - PropriedadesTimeSpan"+
-                     "\r\n5 - DatetimeKindIso8601");
+                     "\r\n5 - DatetimeKindIso8601"+
+                     "\r\n6 - Enumeradores");
       int escolha = int.Parse(Console.ReadLine());
       
       switch (escolha)
@@ -45,6 +47,9 @@ namespace Primeiro
           break;
         case 5:
           dataHora.DateTimeKindIso8601();
+          break;
+        case 6:
+          enumera.Pedido();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
