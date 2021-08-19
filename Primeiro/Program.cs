@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using Primeiro.Models;
 using Primeiro.Services;
+using Primeiro.Tarefa1.Service;
 
 namespace Primeiro
 {
@@ -21,20 +22,22 @@ namespace Primeiro
       var dataHora = new DataHora();
       var geometria = new Geometria();
       var enumera = new Enumeradores();
+      var contrato = new ContratoDeTrabalho();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
-      Console.WriteLine($"1 - VerificaHora"+
-                     "\r\n2 - CalculoTriangulo"+
-                     "\r\n3 - PropriedadesDateTime"+
-                     "\r\n4 - PropriedadesTimeSpan"+
-                     "\r\n5 - DatetimeKindIso8601"+
-                     "\r\n6 - Enumeradores");
+      Console.WriteLine($"1 - VerificaHora" +
+                     "\r\n2 - CalculoTriangulo" +
+                     "\r\n3 - PropriedadesDateTime" +
+                     "\r\n4 - PropriedadesTimeSpan" +
+                     "\r\n5 - DatetimeKindIso8601" +
+                     "\r\n6 - Enumeradores" +
+                     "\r\n7 = Contrato de Trabalho");
       int escolha = int.Parse(Console.ReadLine());
-      
+
       switch (escolha)
       {
         case 1:
-          dataHora.VerificaHora();        
+          dataHora.VerificaHora();
           break;
         case 2:
           geometria.CalculoTriangulo();
@@ -51,13 +54,16 @@ namespace Primeiro
         case 6:
           enumera.Pedido();
           break;
+        case 7:
+          contrato.AddWorker();
+          break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
           break;
       }
-      
-      
-      
+
+
+
       //VerificaHora();
       //Calculo do triangulo
       //CalculoTriangulo();
