@@ -6,6 +6,7 @@ using System.Linq;
 using Primeiro.Models;
 using Primeiro.Services;
 using Primeiro.Tarefa1.Service;
+using Primeiro.Tarefa2.Services;
 
 namespace Primeiro
 {
@@ -23,6 +24,7 @@ namespace Primeiro
       var geometria = new Geometria();
       var enumera = new Enumeradores();
       var contrato = new ContratoDeTrabalho();
+      var social = new SocialPosts();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -31,7 +33,8 @@ namespace Primeiro
                      "\r\n4 - PropriedadesTimeSpan" +
                      "\r\n5 - DatetimeKindIso8601" +
                      "\r\n6 - Enumeradores" +
-                     "\r\n7 = Contrato de Trabalho");
+                     "\r\n7 = Contrato de Trabalho" +
+                     "\r\n8 - Posts");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -56,6 +59,9 @@ namespace Primeiro
           break;
         case 7:
           contrato.AddWorker();
+          break;
+        case 8:
+          social.SocialMidia();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
