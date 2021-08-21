@@ -7,6 +7,7 @@ using Primeiro.Models;
 using Primeiro.Services;
 using Primeiro.Tarefa1.Service;
 using Primeiro.Tarefa2.Services;
+using Primeiro.Desafio1.Service;
 
 namespace Primeiro
 {
@@ -25,6 +26,7 @@ namespace Primeiro
       var enumera = new Enumeradores();
       var contrato = new ContratoDeTrabalho();
       var social = new SocialPosts();
+      var pedido = new Pedido();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -34,7 +36,8 @@ namespace Primeiro
                      "\r\n5 - DatetimeKindIso8601" +
                      "\r\n6 - Enumeradores" +
                      "\r\n7 = Contrato de Trabalho" +
-                     "\r\n8 - Posts");
+                     "\r\n8 - Posts" +
+                     "\r\n9 - PedidoCompra");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -62,6 +65,9 @@ namespace Primeiro
           break;
         case 8:
           social.SocialMidia();
+          break;
+        case 9:
+          pedido.PedidoCompra();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
