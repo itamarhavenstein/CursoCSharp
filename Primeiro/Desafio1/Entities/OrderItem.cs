@@ -1,3 +1,6 @@
+using System.Globalization;
+using System.Text;
+
 namespace Primeiro.Desafio1.Entities
 {
   public class OrderItem
@@ -18,6 +21,16 @@ namespace Primeiro.Desafio1.Entities
     public double SubTotal()
     {
       return Quantity * Price;
+    }
+
+    public override string ToString()
+    {
+      StringBuilder sb = new StringBuilder();
+      sb.Append(Product.Name +", $");
+      sb.Append(Price.ToString("F2", CultureInfo.InvariantCulture)+ ", ");
+      sb.Append("Quantity: "+Quantity +", ");
+      sb.Append("SubTotal: $"+ SubTotal().ToString("F2",CultureInfo.InvariantCulture));
+      return sb.ToString();
     }
   }
 }
