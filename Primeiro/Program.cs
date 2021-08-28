@@ -8,6 +8,7 @@ using Primeiro.Services;
 using Primeiro.Tarefa1.Service;
 using Primeiro.Tarefa2.Services;
 using Primeiro.Desafio1.Service;
+using Primeiro.Services.UpcastingDowncasting;
 
 namespace Primeiro
 {
@@ -27,6 +28,7 @@ namespace Primeiro
       var contrato = new ContratoDeTrabalho();
       var social = new SocialPosts();
       var pedido = new Pedido();
+      var upDown = new UpDowncasting();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -37,7 +39,9 @@ namespace Primeiro
                      "\r\n6 - Enumeradores" +
                      "\r\n7 = Contrato de Trabalho" +
                      "\r\n8 - Posts" +
-                     "\r\n9 - PedidoCompra");
+                     "\r\n9 - PedidoCompra" +
+                     "\r\n10 - Herança" +
+                     "\r\n11 - Upcasting Downcasting");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -68,6 +72,9 @@ namespace Primeiro
           break;
         case 9:
           pedido.PedidoCompra();
+          break;
+        case 11:
+          upDown.UpDown();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
