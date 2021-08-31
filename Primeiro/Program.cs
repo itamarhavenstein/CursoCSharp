@@ -9,6 +9,8 @@ using Primeiro.Tarefa1.Service;
 using Primeiro.Tarefa2.Services;
 using Primeiro.Desafio1.Service;
 using Primeiro.Services.UpcastingDowncasting;
+using Primeiro.Services.Sobreposicao;
+using Primeiro.Services.SeladaClasseMetodo;
 
 namespace Primeiro
 {
@@ -29,6 +31,8 @@ namespace Primeiro
       var social = new SocialPosts();
       var pedido = new Pedido();
       var upDown = new UpDowncasting();
+      var sobre = new PalavrasVirtuais();
+      var sela = new MetodoSelado();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -41,7 +45,9 @@ namespace Primeiro
                      "\r\n8 - Posts" +
                      "\r\n9 - PedidoCompra" +
                      "\r\n10 - Herança" +
-                     "\r\n11 - Upcasting Downcasting");
+                     "\r\n11 - Upcasting Downcasting"+
+                     "\r\n12 - Sobreposição, palavras virtuais"+
+                     "\r\n13 - Classe/Metodo Selada");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -75,6 +81,12 @@ namespace Primeiro
           break;
         case 11:
           upDown.UpDown();
+          break;
+        case 12:
+          sobre.SobreposicaoPalavras();
+          break;
+        case 13:
+          sela.ClasseSeladaM();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
