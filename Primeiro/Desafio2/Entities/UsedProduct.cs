@@ -1,15 +1,14 @@
 using System.Globalization;
 using System;
-
 namespace Primeiro.Desafio2.Entities
 {
   public class UsedProduct : Product
   {
-    public Date ManufactureDate { get; set; }
+    public DateTime ManufactureDate { get; set; }
 
     public UsedProduct() { }
 
-    public UsedProduct(string name, double price, Date manufactureDate) : base(name, price)
+    public UsedProduct(string name, double price, DateTime manufactureDate) : base(name, price)
     {
       ManufactureDate = manufactureDate;
     }
