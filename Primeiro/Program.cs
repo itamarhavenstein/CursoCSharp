@@ -13,6 +13,7 @@ using Primeiro.Services.UpcastingDowncasting;
 using Primeiro.Services.Sobreposicao;
 using Primeiro.Services.SeladaClasseMetodo;
 using Primeiro.Desafio2.Service;
+using Primeiro.Services.Abstrata;
 
 namespace Primeiro
 {
@@ -37,6 +38,7 @@ namespace Primeiro
       var sela = new MetodoSelado();
       var pagaFun = new PagamentoFuncio();
       var regisProduct = new RegisterProduct();
+      var abstraCla = new AbstrataClasse();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -53,7 +55,8 @@ namespace Primeiro
                      "\r\n12 - Sobreposição, palavras virtuais" +
                      "\r\n13 - Classe/Metodo Selada" +
                      "\r\n14 - Pagamento Funcionário"+
-                     "\r\n15 - Register Product");
+                     "\r\n15 - Register Product"+
+                     "\r\n16 - Abstrata Classe");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -99,6 +102,9 @@ namespace Primeiro
           break;
         case 15:
           regisProduct.RegisterProd();
+          break;
+        case 16:
+          abstraCla.AbstrataCla();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");

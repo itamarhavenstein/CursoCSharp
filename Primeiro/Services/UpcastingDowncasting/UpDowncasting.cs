@@ -8,7 +8,8 @@ namespace Primeiro.Services.UpcastingDowncasting
     //vamos utilizar as classes que foram criadas na aula de herança.
     public void UpDown()
     {
-      Account acc = new Account(1001, "Alex", 0.0);
+      //não podemos mais fazer isso pois alteramos a classe para abtrata 
+      //Account acc = new Account(1001, "Alex", 0.0);
       BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0.0, 500.00);
 
       //UPCASTING
