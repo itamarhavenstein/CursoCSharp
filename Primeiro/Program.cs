@@ -39,6 +39,7 @@ namespace Primeiro
       var pagaFun = new PagamentoFuncio();
       var regisProduct = new RegisterProduct();
       var abstraCla = new AbstrataClasse();
+      var abstraMetod = new AbstrataMetod();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -54,9 +55,10 @@ namespace Primeiro
                      "\r\n11 - Upcasting Downcasting" +
                      "\r\n12 - Sobreposição, palavras virtuais" +
                      "\r\n13 - Classe/Metodo Selada" +
-                     "\r\n14 - Pagamento Funcionário"+
-                     "\r\n15 - Register Product"+
-                     "\r\n16 - Abstrata Classe");
+                     "\r\n14 - Pagamento Funcionário" +
+                     "\r\n15 - Register Product" +
+                     "\r\n16 - Abstrata Classe" +
+                     "\r\n17 - Abstrato Metodo");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -105,6 +107,9 @@ namespace Primeiro
           break;
         case 16:
           abstraCla.AbstrataCla();
+          break;
+        case 17:
+          abstraMetod.MetodExemplo();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
