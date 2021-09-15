@@ -14,6 +14,7 @@ using Primeiro.Services.Sobreposicao;
 using Primeiro.Services.SeladaClasseMetodo;
 using Primeiro.Desafio2.Service;
 using Primeiro.Services.Abstrata;
+using Primeiro.Desafio3.Service;
 
 namespace Primeiro
 {
@@ -40,6 +41,7 @@ namespace Primeiro
       var regisProduct = new RegisterProduct();
       var abstraCla = new AbstrataClasse();
       var abstraMetod = new AbstrataMetod();
+      var tax = new TaxService();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -58,7 +60,8 @@ namespace Primeiro
                      "\r\n14 - Pagamento Funcionário" +
                      "\r\n15 - Register Product" +
                      "\r\n16 - Abstrata Classe" +
-                     "\r\n17 - Abstrato Metodo");
+                     "\r\n17 - Abstrato Metodo" +
+                     "\r\n18 - Imposto");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -110,6 +113,9 @@ namespace Primeiro
           break;
         case 17:
           abstraMetod.MetodExemplo();
+          break;
+        case 18:
+          tax.CalculoImpostoHaPagar();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
