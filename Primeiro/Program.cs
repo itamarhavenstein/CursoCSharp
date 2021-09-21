@@ -42,6 +42,7 @@ namespace Primeiro
       var abstraCla = new AbstrataClasse();
       var abstraMetod = new AbstrataMetod();
       var tax = new TaxService();
+      var teste = new Teste();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -61,7 +62,8 @@ namespace Primeiro
                      "\r\n15 - Register Product" +
                      "\r\n16 - Abstrata Classe" +
                      "\r\n17 - Abstrato Metodo" +
-                     "\r\n18 - Imposto");
+                     "\r\n18 - Imposto" +
+                     "\r\n19 - teste");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -117,12 +119,13 @@ namespace Primeiro
         case 18:
           tax.CalculoImpostoHaPagar();
           break;
+        case 19:
+          teste.Teste1();
+          break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
           break;
       }
-
-
 
       //VerificaHora();
       //Calculo do triangulo
