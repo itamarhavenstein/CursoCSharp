@@ -28,6 +28,7 @@ namespace Primeiro.Services
 
        foreach (var item in snapshot1)
        {
+         // falta terminar
            foreach (var item2 in snapshot2)
            {
                if(item == item2 && !keptItem.Contains(item)){

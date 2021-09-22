@@ -43,6 +43,7 @@ namespace Primeiro
       var abstraMetod = new AbstrataMetod();
       var tax = new TaxService();
       var teste = new Teste();
+      var tratando = new TratandoExcecoes();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -63,7 +64,8 @@ namespace Primeiro
                      "\r\n16 - Abstrata Classe" +
                      "\r\n17 - Abstrato Metodo" +
                      "\r\n18 - Imposto" +
-                     "\r\n19 - teste");
+                     "\r\n19 - teste"+
+                     "\r\n20 - TryCatch");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -121,6 +123,9 @@ namespace Primeiro
           break;
         case 19:
           teste.Teste1();
+          break;
+        case 20:
+          tratando.tratandoException();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
