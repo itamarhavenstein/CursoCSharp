@@ -1,4 +1,5 @@
 using System;
+using Primeiro.Exceptions;
 
 namespace Primeiro.Models
 {
@@ -10,11 +11,16 @@ namespace Primeiro.Models
 
     public Reservation() { }
 
-    public Reservation(int roomNumber, DateTime checkIn, DateTime chackOut)
+    public Reservation(int roomNumber, DateTime checkIn, DateTime checkOut)
     {
+      if (checkOut <= checkIn)
+      {
+        throw new DomainException("check-Out date must be after check-in date");
+      }
+
       RoomNumber = roomNumber;
       CheckIn = checkIn;
-      CheckOut = chackOut;
+      CheckOut = checkOut;
     }
 
     public int Duration()
@@ -23,20 +29,19 @@ namespace Primeiro.Models
       return (int)duration.TotalDays;
     }
 
-    public string UpdateDates(DateTime checkIn, DateTime checkOut)
+    public void UpdateDates(DateTime checkIn, DateTime checkOut)
     {
       DateTime now = DateTime.Now;
       if (checkIn < now || checkOut < now)
       {
-        return "Reservation dates for update must be future dates";
+        throw new DomainException("Reservation dates for update must be future dates");
         }
       if (checkOut <= checkIn)
       {
-        return "check-Out date must be after check-in date";
+        throw new DomainException("check-Out date must be after check-in date");
       }
       CheckIn = checkIn;
       CheckOut = checkOut;
-      return null;
     }
 
     public override string ToString()
