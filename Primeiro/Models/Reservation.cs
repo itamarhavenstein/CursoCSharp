@@ -23,10 +23,20 @@ namespace Primeiro.Models
       return (int)duration.TotalDays;
     }
 
-    public void UpdateDates(DateTime checkin, DateTime checkout)
+    public string UpdateDates(DateTime checkIn, DateTime checkOut)
     {
-      CheckIn = checkin;
-      CheckOut = checkout;
+      DateTime now = DateTime.Now;
+      if (checkIn < now || checkOut < now)
+      {
+        return "Reservation dates for update must be future dates";
+        }
+      if (checkOut <= checkIn)
+      {
+        return "check-Out date must be after check-in date";
+      }
+      CheckIn = checkIn;
+      CheckOut = checkOut;
+      return null;
     }
 
     public override string ToString()
