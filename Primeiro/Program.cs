@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Data;
-using System.Linq;
-using Primeiro.Models;
-using Primeiro.Services;
 using Primeiro.Tarefa1.Service;
 using Primeiro.Tarefa2.Services;
 using Primeiro.Tarefa3.Services;
@@ -15,6 +9,7 @@ using Primeiro.Services.SeladaClasseMetodo;
 using Primeiro.Desafio2.Service;
 using Primeiro.Services.Abstrata;
 using Primeiro.Desafio3.Service;
+using Primeiro.Services;
 
 namespace Primeiro
 {
@@ -65,7 +60,8 @@ namespace Primeiro
                      "\r\n17 - Abstrato Metodo" +
                      "\r\n18 - Imposto" +
                      "\r\n19 - teste"+
-                     "\r\n20 - TryCatch");
+                     "\r\n20 - TryCatch" + 
+                     "\r\n21 - Exception personalizada");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -126,6 +122,9 @@ namespace Primeiro
           break;
         case 20:
           tratando.tratandoException();
+          break;
+        case 21:
+          tratando.ExceptionPersonalized();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
