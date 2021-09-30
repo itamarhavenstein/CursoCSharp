@@ -10,6 +10,7 @@ using Primeiro.Desafio2.Service;
 using Primeiro.Services.Abstrata;
 using Primeiro.Desafio3.Service;
 using Primeiro.Services;
+using Primeiro.Desafio4.Service;
 
 namespace Primeiro
 {
@@ -39,6 +40,7 @@ namespace Primeiro
       var tax = new TaxService();
       var teste = new Teste();
       var tratando = new TratandoExcecoes();
+      var operation = new AccountOperations();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -61,7 +63,8 @@ namespace Primeiro
                      "\r\n18 - Imposto" +
                      "\r\n19 - teste"+
                      "\r\n20 - TryCatch" + 
-                     "\r\n21 - Exception personalizada");
+                     "\r\n21 - Exception personalizada"+
+                     "\r\n22 - Desafio Exception");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -125,6 +128,9 @@ namespace Primeiro
           break;
         case 21:
           tratando.ExceptionPersonalized();
+          break;
+          case 22:
+          operation.Operations();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
