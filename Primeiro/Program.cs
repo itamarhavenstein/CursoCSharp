@@ -11,6 +11,7 @@ using Primeiro.Services.Abstrata;
 using Primeiro.Desafio3.Service;
 using Primeiro.Services;
 using Primeiro.Desafio4.Service;
+using Primeiro.Services.FileService;
 
 namespace Primeiro
 {
@@ -41,6 +42,7 @@ namespace Primeiro
       var teste = new Teste();
       var tratando = new TratandoExcecoes();
       var operation = new AccountOperations();
+      var file = new OperationFile();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -61,10 +63,13 @@ namespace Primeiro
                      "\r\n16 - Abstrata Classe" +
                      "\r\n17 - Abstrato Metodo" +
                      "\r\n18 - Imposto" +
-                     "\r\n19 - teste"+
-                     "\r\n20 - TryCatch" + 
-                     "\r\n21 - Exception personalizada"+
-                     "\r\n22 - Desafio Exception");
+                     "\r\n19 - teste" +
+                     "\r\n20 - TryCatch" +
+                     "\r\n21 - Exception personalizada" +
+                     "\r\n22 - Desafio Exception" +
+                     "\r\n23 - Matrizes com listas" +
+                     "\r\n24 - File" +
+                     "\r\n25 - FileStream");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -129,8 +134,17 @@ namespace Primeiro
         case 21:
           tratando.ExceptionPersonalized();
           break;
-          case 22:
+        case 22:
           operation.Operations();
+          break;
+        case 23:
+          teste.MatrizComLista();
+          break;
+        case 24:
+          file.OpeFile();
+          break;
+        case 25:
+          file.OpeFileStream();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
