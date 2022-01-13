@@ -43,6 +43,7 @@ namespace Primeiro
       var tratando = new TratandoExcecoes();
       var operation = new AccountOperations();
       var file = new OperationFile();
+      var usingBlock = new UsingBlock();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -69,7 +70,9 @@ namespace Primeiro
                      "\r\n22 - Desafio Exception" +
                      "\r\n23 - Matrizes com listas" +
                      "\r\n24 - File" +
-                     "\r\n25 - FileStream");
+                     "\r\n25 - FileStream" +
+                     "\r\n26 - Using block" +
+                     "\r\n27 - Stream writer");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -145,6 +148,12 @@ namespace Primeiro
           break;
         case 25:
           file.OpeFileStream();
+          break;
+          case 26:
+          usingBlock.OpeUsingBlock();
+          break;
+          case 27:
+          file.OpeFileStreamWrite();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");

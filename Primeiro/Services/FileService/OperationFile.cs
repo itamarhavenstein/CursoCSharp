@@ -52,5 +52,9 @@ namespace Primeiro.Services.FileService
         if(fs != null) fs.Close();
       }
     }
+
+    public void OpeFileStreamWrite(){
+      
+    }
   }
 }
