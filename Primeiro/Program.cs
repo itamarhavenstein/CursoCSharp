@@ -73,7 +73,8 @@ namespace Primeiro
                      "\r\n25 - FileStream" +
                      "\r\n26 - Using block" +
                      "\r\n27 - Stream writer" +
-                     "\r\n28 - Directory info");
+                     "\r\n28 - Directory info" +
+                     "\r\n29 - Path");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -158,6 +159,9 @@ namespace Primeiro
           break;
           case 28:
           file.DirectoryInfo();
+          break;
+          case 29:
+          file.PathInfo();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");

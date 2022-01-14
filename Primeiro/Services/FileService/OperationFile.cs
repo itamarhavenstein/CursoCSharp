@@ -108,5 +108,13 @@ namespace Primeiro.Services.FileService
         Console.WriteLine(ex.Message);
       }
     }
+
+    public void PathInfo(){
+      string path = @"/media/itamar/e3581c8e-0362-4a8c-9f37-d22f02b5fe5e/lost+found/teste.txt";
+
+      Console.WriteLine("DirectorySeparatorChar: " + Path.DirectorySeparatorChar);
+      Console.WriteLine("PathSeparator: " + Path.PathSeparator);
+      Console.WriteLine("GetDirectoryName: "+ Path.GetDirectoryName(path));
+    }
   }
 }
