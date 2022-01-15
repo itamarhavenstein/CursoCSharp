@@ -12,6 +12,7 @@ using Primeiro.Desafio3.Service;
 using Primeiro.Services;
 using Primeiro.Desafio4.Service;
 using Primeiro.Services.FileService;
+using Primeiro.Desafio5;
 
 namespace Primeiro
 {
@@ -44,6 +45,7 @@ namespace Primeiro
       var operation = new AccountOperations();
       var file = new OperationFile();
       var usingBlock = new UsingBlock();
+      var arquivoCsv = new LeituraCSV();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -74,7 +76,8 @@ namespace Primeiro
                      "\r\n26 - Using block" +
                      "\r\n27 - Stream writer" +
                      "\r\n28 - Directory info" +
-                     "\r\n29 - Path");
+                     "\r\n29 - Path" +
+                     "\r\n30 - Ler Arquivo CSV");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -162,6 +165,9 @@ namespace Primeiro
           break;
           case 29:
           file.PathInfo();
+          break;
+          case 30:
+          arquivoCsv.LerArquivo();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
