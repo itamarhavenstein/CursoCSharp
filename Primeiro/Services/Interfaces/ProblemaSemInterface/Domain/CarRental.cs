@@ -1,10 +1,10 @@
 using System;
 
-namespace Primeiro.Services.Interfaces.ProblemaComInterface.Domain
+namespace Primeiro.Services.Interfaces.ProblemaSemInterface.Domain
 {
-    public class CarRental
-    {
-         public DateTime Start { get; set; }
+  public class CarRental
+  {
+    public DateTime Start { get; set; }
     public DateTime Finish { get; set; }
     public Vehicle Vehicle { get; set; }
     public Invoice Invoice { get; set; }
@@ -15,5 +15,5 @@ namespace Primeiro.Services.Interfaces.ProblemaComInterface.Domain
       Finish = finish;
       Vehicle = vehicle;
     }
-    }
+  }
 }

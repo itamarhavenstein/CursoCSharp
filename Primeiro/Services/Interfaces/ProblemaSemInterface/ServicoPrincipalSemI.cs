@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
-using Primeiro.Services.Interfaces.ProblemaComInterface.Domain;
-using Primeiro.Services.Interfaces.ProblemaComInterface.Service;
+using Primeiro.Services.Interfaces.ProblemaSemInterface.Domain;
+using Primeiro.Services.Interfaces.ProblemaSemInterface.Service;
 
-namespace Primeiro.Services.Interfaces.ProblemaComInterface
+namespace Primeiro.Services.Interfaces.ProblemaSemInterface
 {
   public class ServicoPrincipalSemI
   {

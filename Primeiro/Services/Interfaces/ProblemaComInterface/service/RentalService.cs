@@ -1,18 +1,19 @@
 using System;
 using Primeiro.Services.Interfaces.ProblemaComInterface.Domain;
 
-namespace Primeiro.Services.Interfaces.ProblemaComInterface.Service
+namespace Primeiro.Services.Interfaces.ProblemaComInterface.service
 {
   public class RentalService
   {
-    public double PricePerHour { get; private set; }
+ public double PricePerHour { get; private set; }
     public double PricePerDay { get; private set; }
-    private BrazilTaxService _brazilTazService = new BrazilTaxService();
+    private ITaxService _taxService; 
 
-    public RentalService(double pricePerHour, double pricePerDay)
+    public RentalService(double pricePerHour, double pricePerDay, ITaxService taxService)
     {
       PricePerHour = pricePerHour;
       PricePerDay = pricePerDay;
+      _taxService = taxService;
     }
 
     public void ProcessInvoice(CarRental carRental)
@@ -29,7 +30,7 @@ namespace Primeiro.Services.Interfaces.ProblemaComInterface.Service
         basicPayment = PricePerDay * Math.Ceiling(duration.TotalDays);
       }
 
-      double tax = _brazilTazService.Tax(basicPayment);
+      double tax = _taxService.Tax(basicPayment);
       carRental.Invoice = new Invoice(basicPayment, tax);
     }
   }

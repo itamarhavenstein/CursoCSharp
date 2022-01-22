@@ -1,4 +1,4 @@
-namespace Primeiro.Services.Interfaces.ProblemaComInterface.Service
+namespace Primeiro.Services.Interfaces.ProblemaSemInterface.Service
 {
   public class BrazilTaxService
   {

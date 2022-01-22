@@ -1,7 +1,7 @@
 namespace Primeiro.Services.Interfaces.ProblemaComInterface.Domain
 {
-    public class Vehicle
-    {
+  public class Vehicle
+  {
     public Vehicle(string model)
     {
       Model = model;
@@ -9,6 +9,5 @@ namespace Primeiro.Services.Interfaces.ProblemaComInterface.Domain
 
     public string Model { get; set; }
 
-        
-    }
+  }
 }

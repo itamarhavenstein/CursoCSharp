@@ -13,6 +13,8 @@ using Primeiro.Services;
 using Primeiro.Desafio4.Service;
 using Primeiro.Services.FileService;
 using Primeiro.Desafio5;
+using Primeiro.Services.Interfaces.ProblemaComInterface;
+using Primeiro.Services.Interfaces.ProblemaSemInterface;
 
 namespace Primeiro
 {
@@ -46,6 +48,8 @@ namespace Primeiro
       var file = new OperationFile();
       var usingBlock = new UsingBlock();
       var arquivoCsv = new LeituraCSV();
+      var semInterface = new ServicoPrincipalSemI();
+      var comInterface = new ServicoPrincipalComI();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -77,7 +81,9 @@ namespace Primeiro
                      "\r\n27 - Stream writer" +
                      "\r\n28 - Directory info" +
                      "\r\n29 - Path" +
-                     "\r\n30 - Ler Arquivo CSV");
+                     "\r\n30 - Ler Arquivo CSV" +
+                     "\r\n31 - Problema Sem Interface" + 
+                     "\r\n32 - Problema Com Interface");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -168,6 +174,12 @@ namespace Primeiro
           break;
           case 30:
           arquivoCsv.LerArquivo();
+          break;
+          case 31:
+          semInterface.SemInterface();
+          break;
+          case 32:
+          comInterface.ComInterface();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");

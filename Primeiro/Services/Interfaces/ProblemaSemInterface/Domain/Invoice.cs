@@ -1,10 +1,10 @@
 using System.Globalization;
 
-namespace Primeiro.Services.Interfaces.ProblemaComInterface.Domain
+namespace Primeiro.Services.Interfaces.ProblemaSemInterface.Domain
 {
-    public class Invoice
-    {
-        public double BasicPayment { get; set; }
+  public class Invoice
+  {
+    public double BasicPayment { get; set; }
     public double Tax { get; set; }
 
     public Invoice(double basicPayment, double tax)
@@ -26,5 +26,5 @@ namespace Primeiro.Services.Interfaces.ProblemaComInterface.Domain
       + "\nTotal payment: "
       + TotalPayment.ToString("F2", CultureInfo.InvariantCulture);
     }
-    }
+  }
 }
