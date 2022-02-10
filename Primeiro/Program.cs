@@ -16,6 +16,7 @@ using Primeiro.Desafio5;
 using Primeiro.Services.Interfaces.ProblemaComInterface;
 using Primeiro.Services.Interfaces.ProblemaSemInterface;
 using Primeiro.Services.Interfaces.Exercicio;
+using Primeiro.Services.Interfaces.Exemplo;
 
 namespace Primeiro
 {
@@ -52,6 +53,7 @@ namespace Primeiro
       var semInterface = new ServicoPrincipalSemI();
       var comInterface = new ServicoPrincipalComI();
       var contratos = new Contratos();
+      var forGeo = new FormasGeometricas();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -86,7 +88,8 @@ namespace Primeiro
                      "\r\n30 - Ler Arquivo CSV" +
                      "\r\n31 - Problema Sem Interface" + 
                      "\r\n32 - Problema Com Interface" +
-                     "\r\n33 - Criando Contratos ");
+                     "\r\n33 - Criando Contratos "+
+                     "\r\n34 - Formas Geometricas");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -186,6 +189,9 @@ namespace Primeiro
           break;
           case 33:
           contratos.CriandoContratos();
+          break;
+          case 34:
+          forGeo.FormasGeo();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
