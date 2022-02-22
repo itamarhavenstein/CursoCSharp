@@ -13,6 +13,11 @@ namespace Primeiro.Services.Interfaces.ExemploDevices
       Scanner s = new Scanner() { SerialNumber = 2003 };
       s.ProcessDoc("My email");
       Console.WriteLine(s.Scan());
+
+      ComboDevice c = new ComboDevice() { SerialNumber = 3219};
+      c.ProcessDoc("My dissertation");
+      c.Print("My dissertation");
+      Console.WriteLine(c.Scan());
     }
   }
 }

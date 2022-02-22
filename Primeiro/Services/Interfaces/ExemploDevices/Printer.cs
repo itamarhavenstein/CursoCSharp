@@ -2,7 +2,7 @@ using System;
 
 namespace Primeiro.Services.Interfaces.ExemploDevices
 {
-  public class Printer : Device
+  public class Printer : Device, IPrinter
   {
     public override void ProcessDoc(string document)
     {
