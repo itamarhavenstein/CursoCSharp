@@ -18,6 +18,9 @@ using Primeiro.Services.Interfaces.ProblemaSemInterface;
 using Primeiro.Services.Interfaces.Exercicio;
 using Primeiro.Services.Interfaces.Exemplo;
 using Primeiro.Services.Interfaces.ExemploDevices;
+using Primeiro.Services.Interfaces.ExemploCompara;
+using System.Globalization;
+using Primeiro.Services.Generics;
 
 namespace Primeiro
 {
@@ -56,6 +59,8 @@ namespace Primeiro
       var contratos = new Contratos();
       var forGeo = new FormasGeometricas();
       var device = new TesteDevices();
+      var compara = new TesteDeComparacao();
+      var genericReuso = new ReusoGenerico();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -88,11 +93,12 @@ namespace Primeiro
                      "\r\n28 - Directory info" +
                      "\r\n29 - Path" +
                      "\r\n30 - Ler Arquivo CSV" +
-                     "\r\n31 - Problema Sem Interface" + 
+                     "\r\n31 - Problema Sem Interface" +
                      "\r\n32 - Problema Com Interface" +
-                     "\r\n33 - Criando Contratos "+
-                     "\r\n34 - Formas Geometricas"+
-                     "\r\n35 - Teste Device");
+                     "\r\n33 - Criando Contratos " +
+                     "\r\n34 - Formas Geometricas" +
+                     "\r\n35 - Teste Device" +
+                     "\r\n36 - Generic");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -169,35 +175,39 @@ namespace Primeiro
         case 25:
           file.OpeFileStream();
           break;
-          case 26:
+        case 26:
           usingBlock.OpeUsingBlock();
           break;
-          case 27:
+        case 27:
           file.OpeFileStreamWrite();
           break;
-          case 28:
+        case 28:
           file.DirectoryInfo();
           break;
-          case 29:
+        case 29:
           file.PathInfo();
           break;
-          case 30:
+        case 30:
           arquivoCsv.LerArquivo();
           break;
-          case 31:
+        case 31:
           semInterface.SemInterface();
           break;
-          case 32:
+        case 32:
           comInterface.ComInterface();
           break;
-          case 33:
+        case 33:
           contratos.CriandoContratos();
           break;
-          case 34:
+        case 34:
           forGeo.FormasGeo();
           break;
-          case 35:
+        case 35:
           device.TestDevice();
+          break;
+        case 36:
+         //Reuso
+          genericReuso.Reuso();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
@@ -232,5 +242,14 @@ namespace Primeiro
       //TimeSpan
       //funcoesTimeSpan();
     }
+
+    // private static void CalculoTriangulo()
+    // {
+    //   string format = "N2";
+    //   decimal? num2 = (decimal?)3.05;
+    //   decimal? num3 = (decimal?)4.01;
+    //   string num = num2?.ToString(format,CultureInfo.InvariantCulture)+"/"+num3?.ToString("N2",CultureInfo.InvariantCulture);
+    //   Console.WriteLine(num);
+    // }
   }
 }
