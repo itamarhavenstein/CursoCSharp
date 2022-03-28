@@ -21,12 +21,12 @@ namespace Primeiro.Services
       y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
       y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-      double areaX = x.Area();
+      double areaX = 5;
 
       double areaY = y.Area();
 
       Console.WriteLine("Área de x = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
-      Console.WriteLine("Área de y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
+      Console.WriteLine("Área de y = " + areaY.ToString("F0", CultureInfo.InvariantCulture));
 
       if (areaX > areaY)
       {
