@@ -208,7 +208,8 @@ namespace Primeiro
         case 36:
          //Reuso
           //genericReuso.Reuso();
-          genericReuso.CalculationMax();
+          // genericReuso.CalculationMax();
+          genericReuso.EqualsGetHashCode();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
