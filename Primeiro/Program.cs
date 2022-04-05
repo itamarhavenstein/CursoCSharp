@@ -207,7 +207,8 @@ namespace Primeiro
           break;
         case 36:
          //Reuso
-          genericReuso.Reuso();
+          //genericReuso.Reuso();
+          genericReuso.CalculationMax();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
