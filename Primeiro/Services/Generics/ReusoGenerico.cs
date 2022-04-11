@@ -49,9 +49,10 @@ namespace Primeiro.Services.Generics
       Console.WriteLine(max);
     }
 
-    public void EqualsGetHashCode(){
-      Client a = new Client{Name = "Maria", Email = "maria@gmail.com"};
-      Client b = new Client{Name = "Alex", Email = "maria@gmail.com"};
+    public void EqualsGetHashCode()
+    {
+      Client a = new Client { Name = "Maria", Email = "maria@gmail.com" };
+      Client b = new Client { Name = "Alex", Email = "maria@gmail.com" };
 
       //é mais lento que o hashCode mas é mais confiável
       Console.WriteLine(a.Equals(b));
@@ -64,5 +65,54 @@ namespace Primeiro.Services.Generics
       ///precisa comparar é interesante utilizar o hashCode e depois de ter achado um que seja igual
       ///vc confirma com Equals para ter certeza do que vc está comparando.
     }
+
+    public void HasetSortSet()
+    {
+      HashSet<string> set = new HashSet<string>();
+      set.Add("itamar");
+      set.Add("TV");
+      set.Add("Notebook");
+
+      Console.WriteLine(set.Contains("Notebook"));
+
+      foreach (var item in set)
+      {
+        Console.WriteLine(item);
+      }
+    }
+
+    public void HasetSortSet2()
+    {
+      SortedSet<int> a = new SortedSet<int>() { 0, 2, 4, 5, 6, 8, 10 };
+      SortedSet<int> b = new SortedSet<int>() { 5, 6, 7, 8, 9, 10 };
+
+      // PrintCollection(a);
+
+      //union
+      SortedSet<int> c = new SortedSet<int>(a);
+      c.UnionWith(b);
+
+      PrintCollection(c);
+      
+      //intersection
+      SortedSet<int> d = new SortedSet<int>(a);
+      d.IntersectWith(b);
+      PrintCollection(d);
+
+      //Difference
+      SortedSet<int> e = new SortedSet<int>(a);
+      e.ExceptWith(b);
+      PrintCollection(e);
+    }
+
+    static void PrintCollection<T>(IEnumerable<T> collection)
+    {
+      foreach (T item in collection)
+      {
+        Console.Write(item + " ");
+      }
+      Console.WriteLine();
+    }
   }
+
 }

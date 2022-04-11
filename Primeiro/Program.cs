@@ -209,7 +209,9 @@ namespace Primeiro
          //Reuso
           //genericReuso.Reuso();
           // genericReuso.CalculationMax();
-          genericReuso.EqualsGetHashCode();
+         // genericReuso.EqualsGetHashCode();
+        //  genericReuso.HasetSortSet();
+        genericReuso.HasetSortSet2();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
