@@ -20,6 +20,20 @@ namespace Primeiro.Services.Generics.Entities
       + Price.ToString("F2", CultureInfo.InvariantCulture);
     }
 
+    public override int GetHashCode()
+    {
+      return Name.GetHashCode() + Price.GetHashCode();
+    }
+
+    public override bool Equals(object obj)
+    {
+      if(!(obj is Product)){
+        return false;
+      }
+      Product other = obj as Product;
+      return Name.Equals(other.Name) && Price.Equals(other.Price);
+    }
+
     public int CompareTo(object obj)
     {
       if (!(obj is Product))

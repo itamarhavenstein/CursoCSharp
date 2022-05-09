@@ -93,7 +93,7 @@ namespace Primeiro.Services.Generics
       c.UnionWith(b);
 
       PrintCollection(c);
-      
+
       //intersection
       SortedSet<int> d = new SortedSet<int>(a);
       d.IntersectWith(b);
@@ -105,6 +105,22 @@ namespace Primeiro.Services.Generics
       PrintCollection(e);
     }
 
+    public void HashSetEquals()
+    {
+     HashSet<Product> a = new HashSet<Product>();
+     a.Add(new Product("TV", 900.00));
+     a.Add(new Product("Notebook", 1200.00));
+
+     HashSet<Point> b = new HashSet<Point>();
+     b.Add(new Point(3,4));
+     b.Add(new Point(5,10));
+
+     Product prod = new Product("Notebook", 1200.00);
+     Console.WriteLine(a.Contains(prod));
+      //quando for por struct vai funcionar sem precisar implementar o getHashCode e o equals,
+     Point p = new Point(5,10);
+     Console.WriteLine(b.Contains(p));
+    }
     static void PrintCollection<T>(IEnumerable<T> collection)
     {
       foreach (T item in collection)
@@ -114,5 +130,4 @@ namespace Primeiro.Services.Generics
       Console.WriteLine();
     }
   }
-
 }
