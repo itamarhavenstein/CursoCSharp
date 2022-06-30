@@ -21,6 +21,7 @@ using Primeiro.Services.Interfaces.ExemploDevices;
 using Primeiro.Services.Interfaces.ExemploCompara;
 using System.Globalization;
 using Primeiro.Services.Generics;
+using Primeiro.Desafio6;
 
 namespace Primeiro
 {
@@ -61,6 +62,7 @@ namespace Primeiro
       var device = new TesteDevices();
       var compara = new TesteDeComparacao();
       var genericReuso = new ReusoGenerico();
+      var conjuntos = new AlunosNoCurso();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -98,7 +100,8 @@ namespace Primeiro
                      "\r\n33 - Criando Contratos " +
                      "\r\n34 - Formas Geometricas" +
                      "\r\n35 - Teste Device" +
-                     "\r\n36 - Generic");
+                     "\r\n36 - Generic"+
+                     "\r\n37 - Exemplo sobre conjuntos:");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -213,6 +216,9 @@ namespace Primeiro
         //  genericReuso.HasetSortSet();
         // genericReuso.HasetSortSet2();
         genericReuso.HashSetEquals();
+        break;
+        case 37:
+          conjuntos.QtdAlunosNosCursos();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
