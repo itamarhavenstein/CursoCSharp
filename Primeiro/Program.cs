@@ -2,26 +2,27 @@
 using Primeiro.Tarefa1.Service;
 using Primeiro.Tarefa2.Services;
 using Primeiro.Tarefa3.Services;
-using Primeiro.Desafio1.Service;
+using Primeiro.Desafios.Desafio1.Service;
 using Primeiro.Services.UpcastingDowncasting;
 using Primeiro.Services.Sobreposicao;
 using Primeiro.Services.SeladaClasseMetodo;
-using Primeiro.Desafio2.Service;
+using Primeiro.Desafios.Desafio2.Service;
 using Primeiro.Services.Abstrata;
-using Primeiro.Desafio3.Service;
+using Primeiro.Desafios.Desafio3.Service;
 using Primeiro.Services;
-using Primeiro.Desafio4.Service;
+using Primeiro.Desafios.Desafio4.Service;
 using Primeiro.Services.FileService;
-using Primeiro.Desafio5;
+using Primeiro.Desafios.Desafio5;
 using Primeiro.Services.Interfaces.ProblemaComInterface;
 using Primeiro.Services.Interfaces.ProblemaSemInterface;
 using Primeiro.Services.Interfaces.Exercicio;
 using Primeiro.Services.Interfaces.Exemplo;
 using Primeiro.Services.Interfaces.ExemploDevices;
 using Primeiro.Services.Interfaces.ExemploCompara;
-using System.Globalization;
 using Primeiro.Services.Generics;
-using Primeiro.Desafio6;
+using Primeiro.Desafios.Desafio6;
+using Primeiro.Services.Generics.Dictionaries;
+using Primeiro.Desafios.Desafio7;
 
 namespace Primeiro
 {
@@ -63,6 +64,8 @@ namespace Primeiro
       var compara = new TesteDeComparacao();
       var genericReuso = new ReusoGenerico();
       var conjuntos = new AlunosNoCurso();
+      var dictio = new ExemploDicSort();
+      var desafioDict = new DesafioDictionary();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -100,8 +103,10 @@ namespace Primeiro
                      "\r\n33 - Criando Contratos " +
                      "\r\n34 - Formas Geometricas" +
                      "\r\n35 - Teste Device" +
-                     "\r\n36 - Generic"+
-                     "\r\n37 - Exemplo sobre conjuntos:");
+                     "\r\n36 - Generic" +
+                     "\r\n37 - Exemplo sobre conjuntos:" +
+                     "\r\n38 - Exemplo de dicionario" +
+                     "\r\n39 - Desafio dictionary");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -209,16 +214,20 @@ namespace Primeiro
           device.TestDevice();
           break;
         case 36:
-         //Reuso
+          //Reuso
           //genericReuso.Reuso();
           // genericReuso.CalculationMax();
-         // genericReuso.EqualsGetHashCode();
-        //  genericReuso.HasetSortSet();
-        // genericReuso.HasetSortSet2();
-        genericReuso.HashSetEquals();
-        break;
+          // genericReuso.EqualsGetHashCode();
+          //  genericReuso.HasetSortSet();
+          // genericReuso.HasetSortSet2();
+          genericReuso.HashSetEquals();
+          break;
         case 37:
           conjuntos.QtdAlunosNosCursos();
+          break;
+        case 38:
+          //dictio.DictionarExemplo();
+          desafioDict.ContagemVotos();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
