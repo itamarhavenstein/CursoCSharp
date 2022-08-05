@@ -23,6 +23,7 @@ using Primeiro.Services.Generics;
 using Primeiro.Desafios.Desafio6;
 using Primeiro.Services.Generics.Dictionaries;
 using Primeiro.Desafios.Desafio7;
+using Primeiro.ExtensionMethods;
 
 namespace Primeiro
 {
@@ -66,6 +67,8 @@ namespace Primeiro
       var conjuntos = new AlunosNoCurso();
       var dictio = new ExemploDicSort();
       var desafioDict = new DesafioDictionary();
+      var extension = new ExtensionData();
+      var extension1 = new ExtensionString();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -106,7 +109,8 @@ namespace Primeiro
                      "\r\n36 - Generic" +
                      "\r\n37 - Exemplo sobre conjuntos:" +
                      "\r\n38 - Exemplo de dicionario" +
-                     "\r\n39 - Desafio dictionary");
+                     "\r\n39 - Desafio dictionary" +
+                     "\r\n40 - Extension Methods ");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -228,6 +232,10 @@ namespace Primeiro
         case 38:
           //dictio.DictionarExemplo();
           desafioDict.ContagemVotos();
+          break;
+          case 40:
+          //extension.TratandoDatas();
+            extension1.TratandoStrings();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
