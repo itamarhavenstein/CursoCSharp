@@ -253,7 +253,9 @@ namespace Primeiro
           funtional.FuncProgram();
           break;
         case 43:
-          delegates.DelegaProgram();
+          // delegates.DelegaProgram();
+          // delegates.DelegaProgram2();
+          delegates.DelegateActionProgram();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
