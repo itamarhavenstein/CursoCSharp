@@ -27,6 +27,7 @@ using Primeiro.ExtensionMethods;
 using Primeiro.TopicosAvancados.Comparison;
 using Primeiro.TopicosAvancados.ProgramFuntional;
 using Primeiro.TopicosAvancados.Delegates;
+using Primeiro.TopicosAvancados.Linq;
 
 namespace Primeiro
 {
@@ -75,6 +76,7 @@ namespace Primeiro
       var comparison = new ComparisonProgram();
       var funtional = new FunctionalProgram();
       var delegates = new DelegateProgram();
+      var linqProg = new LinqProgram();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -119,7 +121,8 @@ namespace Primeiro
                      "\r\n40 - Extension Methods " +
                      "\r\n41 - Comparison" +
                      "\r\n42 - Programação Funcional" +
-                     "\r\n43 - Delegates");
+                     "\r\n43 - Delegates" +
+                     "\r\n44 - Linq");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -255,7 +258,11 @@ namespace Primeiro
         case 43:
           // delegates.DelegaProgram();
           // delegates.DelegaProgram2();
-          delegates.DelegateActionProgram();
+          // delegates.DelegateActionProgram();
+          delegates.DelegateFuncProgram();
+          break;
+        case 44:
+          linqProg.ProgramLinq();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
