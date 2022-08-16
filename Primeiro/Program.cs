@@ -262,7 +262,8 @@ namespace Primeiro
           delegates.DelegateFuncProgram();
           break;
         case 44:
-          linqProg.ProgramLinq();
+          // linqProg.ProgramLinq();
+          linqProg.LinqSearch();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
