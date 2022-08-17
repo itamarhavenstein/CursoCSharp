@@ -28,6 +28,7 @@ using Primeiro.TopicosAvancados.Comparison;
 using Primeiro.TopicosAvancados.ProgramFuntional;
 using Primeiro.TopicosAvancados.Delegates;
 using Primeiro.TopicosAvancados.Linq;
+using Primeiro.TopicosAvancados.Exercicios;
 
 namespace Primeiro
 {
@@ -77,6 +78,7 @@ namespace Primeiro
       var funtional = new FunctionalProgram();
       var delegates = new DelegateProgram();
       var linqProg = new LinqProgram();
+      var exerProg = new ExerciciosProgram();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -122,7 +124,8 @@ namespace Primeiro
                      "\r\n41 - Comparison" +
                      "\r\n42 - Programação Funcional" +
                      "\r\n43 - Delegates" +
-                     "\r\n44 - Linq");
+                     "\r\n44 - Linq" +
+                     "\r\n45 - exercicio");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -263,7 +266,11 @@ namespace Primeiro
           break;
         case 44:
           // linqProg.ProgramLinq();
-          linqProg.LinqSearch();
+          // linqProg.LinqSearch();
+          linqProg.LinqSQL();
+          break;
+        case 45:
+          exerProg.ExerProgram();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
