@@ -24,6 +24,11 @@ using Primeiro.Desafios.Desafio6;
 using Primeiro.Services.Generics.Dictionaries;
 using Primeiro.Desafios.Desafio7;
 using Primeiro.ExtensionMethods;
+using Primeiro.TopicosAvancados.Comparison;
+using Primeiro.TopicosAvancados.ProgramFuntional;
+using Primeiro.TopicosAvancados.Delegates;
+using Primeiro.TopicosAvancados.Linq;
+using Primeiro.TopicosAvancados.Exercicios;
 
 namespace Primeiro
 {
@@ -69,6 +74,11 @@ namespace Primeiro
       var desafioDict = new DesafioDictionary();
       var extension = new ExtensionData();
       var extension1 = new ExtensionString();
+      var comparison = new ComparisonProgram();
+      var funtional = new FunctionalProgram();
+      var delegates = new DelegateProgram();
+      var linqProg = new LinqProgram();
+      var exerProg = new ExerciciosProgram();
 
       Console.WriteLine($"Escolha o que vc deseja testar!!!");
       Console.WriteLine($"1 - VerificaHora" +
@@ -110,7 +120,12 @@ namespace Primeiro
                      "\r\n37 - Exemplo sobre conjuntos:" +
                      "\r\n38 - Exemplo de dicionario" +
                      "\r\n39 - Desafio dictionary" +
-                     "\r\n40 - Extension Methods ");
+                     "\r\n40 - Extension Methods " +
+                     "\r\n41 - Comparison" +
+                     "\r\n42 - Programação Funcional" +
+                     "\r\n43 - Delegates" +
+                     "\r\n44 - Linq" +
+                     "\r\n45 - exercicio");
       int escolha = int.Parse(Console.ReadLine());
 
       switch (escolha)
@@ -233,9 +248,29 @@ namespace Primeiro
           //dictio.DictionarExemplo();
           desafioDict.ContagemVotos();
           break;
-          case 40:
+        case 40:
           //extension.TratandoDatas();
-            extension1.TratandoStrings();
+          extension1.TratandoStrings();
+          break;
+        case 41:
+          comparison.ComparisonProg();
+          break;
+        case 42:
+          funtional.FuncProgram();
+          break;
+        case 43:
+          // delegates.DelegaProgram();
+          // delegates.DelegaProgram2();
+          // delegates.DelegateActionProgram();
+          delegates.DelegateFuncProgram();
+          break;
+        case 44:
+          // linqProg.ProgramLinq();
+          // linqProg.LinqSearch();
+          linqProg.LinqSQL();
+          break;
+        case 45:
+          exerProg.ExerProgram();
           break;
         default:
           Console.WriteLine($"Não temos esta opção tente novamente!!!");
